@@ -23,10 +23,15 @@ const useBuildingData = () => {
     getData()
   }, []) 
 
-  const getFloorByIndex = (floorIndex: number): Floor | undefined =>
-  {
-    //FILL HERE
+  const getFloorByIndex = (floorIndex: number): Floor | undefined => {
+    if (floorIndex < buildingData.length && floorIndex >= 0) {
+      return buildingData[floorIndex]
+    } else {
+      return undefined
+    }
   }
+  
+
   const getListOfActivities = ():string[]=>{
     //FILL HERE
   }
