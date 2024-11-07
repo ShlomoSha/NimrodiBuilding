@@ -4,16 +4,15 @@ import { useSelector } from "react-redux";
 import useBuildingData from "../../utils/BuildingDataProvider";
 import "./Layout.css";
 import Reception from "../../pages/Reception/Reception";
-import { RootState } from "../../store/store";
 
 const Layout: React.FC = () => {
-  const floorAccess = useSelector((state: RootState) => state.floorAccess)
-  //   (state: {
-  //     floorAccess: {
-  //       floorAccess: [boolean, boolean, boolean, boolean, boolean];
-  //     };
-  //   }) => state.floorAccess.floorAccess
-  // );
+  const floorAccess = useSelector(
+    (state: {
+      floorAccess: {
+        floorAccess: [boolean, boolean, boolean, boolean, boolean];
+      };
+    }) => state.floorAccess.floorAccess
+  );
 
   console.log(floorAccess)
   const { getFloorByIndex } = useBuildingData();
