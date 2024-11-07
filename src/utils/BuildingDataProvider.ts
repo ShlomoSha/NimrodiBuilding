@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import data from '../data/building.json'
 
 interface Floor {
   name: string;
@@ -11,16 +12,8 @@ interface Floor {
 const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
 
-  useEffect(() => {
-
-    const getData = async () => {
-      const res = await fetch('../data/building.json')
-      const data = await res.json()
-      setBuildingData(data)
-      return
-    }
-
-    getData()
+  useEffect(() => {    
+    setBuildingData(data)
   }, []) 
 
   const getFloorByIndex = (floorIndex: number): Floor | undefined => {
