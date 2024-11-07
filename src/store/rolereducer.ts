@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-const initialState = "Unknown Personnel"
+const initialState: string = "Unknown Personnel"
 
 export const roleSlice = createSlice({
     name: 'Role',
