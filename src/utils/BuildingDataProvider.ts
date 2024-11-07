@@ -29,12 +29,13 @@ const useBuildingData = () => {
     } else {
       return undefined
     }
-  }
-  
+  }  
 
   const getListOfActivities = ():string[]=>{
-    //FILL HERE
+    const activities = buildingData.map(b => b.activity)
+    return activities
   }
+  
   return {
     buildingData,
     getFloorByIndex,
