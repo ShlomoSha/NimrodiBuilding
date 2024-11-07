@@ -11,10 +11,19 @@ interface Floor {
 const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
 
-  //FILL HERE LOGIC TO SET THE BUILDING DATA
+  useEffect(() => {
 
+    const getData = async () => {
+      const res = await fetch('../data/building.json')
+      const data = await res.json()
+      setBuildingData(data)
+      return
+    }
 
-  const getFloorByIndex = (floorIndex:number): Floor |undefined =>
+    getData()
+  }, []) 
+
+  const getFloorByIndex = (floorIndex: number): Floor | undefined =>
   {
     //FILL HERE
   }
